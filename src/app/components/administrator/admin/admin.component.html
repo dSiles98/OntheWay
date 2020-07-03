@@ -1,0 +1,3 @@
+<button mdbBtn type="button" *ngIf="isSuperAdmin" id="button" mdbWavesEffect class="{{ 'buttonPrimaryStyle' | theme }}" routerLink="/create-admin"><mdb-icon icon="user-plus" size="lg" class="mr-1"></mdb-icon> Create Administrator</button>
+<button mdbBtn type="button" id="buttons" mdbWavesEffect class="{{ 'buttonPrimaryStyle' | theme }}" routerLink="/create-event"><mdb-icon icon="plus-square" size="lg" class="mr-1"></mdb-icon> Create Event</button><br>
+<app-admin-events></app-admin-events>

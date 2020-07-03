@@ -1,0 +1,12 @@
+<div class="fileContent">
+    <mdb-card class="form-register-user">
+        <h5 align="center">{{nameFile}}</h5>
+        <div id="fileSelected" class="{{ 'buttonPrimaryStyle' | theme}}">
+            <p id="title">Add File</p>
+            <input type="file" #file (change)="updateFiles(file)" accept="image/png, .jpeg, .jpg">
+        </div>
+        <input type="button" (click)="upload()" value="Save" class="{{ 'buttonPrimaryStyle' | theme}}" [disabled]="!enabled" mdbWavesEffect>
+        <mdb-progress *ngIf="percent > 0" value="{{percent}}" min="0" max="100" type="success" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+        <div id="visor" #visor></div>
+    </mdb-card>
+</div>

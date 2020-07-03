@@ -1,0 +1,29 @@
+<p class="letters">If you can't find the place where the event will be, you can create it here:</p>
+<!-- Add Location for modal -->
+<div>
+    <form [formGroup]="cardForm">
+        <div class="modals">
+          <div class="md-form">
+            <i class="fa fa-user prefix"></i>
+            <input type="text" id="name" formControlName="eventName" [(ngModel)]="label" class="form-control" data-error="Invalid name" mdbInputDirective>
+            <label for="name" class="font-weight-light">Site Name</label>
+          </div>
+        </div>
+        <div class="modals">
+          <div class="md-form">
+            <i class="fa fa-pencil prefix"></i>
+            <textarea mdbInputDirective type="text" formControlName="description" [(ngModel)]="descritionSite" id="form8" class="md-textarea form-control" data-error="Invalid description" rows="1"></textarea>
+            <label for="form8">Description</label>
+          </div>
+        </div>
+      </form>
+      <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)" [zoomControl]="true">
+        <agm-marker (markerClick)="clickedMarker()"
+                    [latitude]="markedLat"
+                    [longitude]="markedLng"
+                    [label]="label"></agm-marker>
+      </agm-map>
+
+
+</div>
+

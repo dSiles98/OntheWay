@@ -1,0 +1,51 @@
+<mat-checkbox class="example-margin" *ngIf="!date" labelPosition="before" [(ngModel)]="checked">The event is one day?</mat-checkbox>
+<form [formGroup]="startForm" *ngIf="!date">
+  <!-- Add Date -->
+  <div class="modals"  *ngIf="!checked">
+    <div class="md-form">
+      <i class="fa fa-calendar prefix"></i>
+      <input #dateStart type="date" id="start" placeholder="" (ngModelChange)="send($event)" formControlName="startDate" class="form-control" data-error="You can schedule the event only for one year from today" mdbInputDirective>
+      <label for="start" class="font-weight-light">Start Date</label>
+    </div>
+  </div>
+  <!-- Add Date -->
+</form>
+<form [formGroup]="endForm" *ngIf="!date">
+  <div class="modals" *ngIf="!checked">
+    <div class="md-form">
+      <i class="fa fa-calendar prefix"></i>
+      <input #dateEnd type="date" id="end" placeholder="" (ngModelChange)="verifeEnd($event)" formControlName="endDate" class="form-control" data-error="The conclusion date can not be before the start date" mdbInputDirective>
+      <label for="end" class="font-weight-light">End Date</label>
+    </div>
+  </div>
+</form>
+<form [formGroup]="startForm" *ngIf="!date">
+  <!-- Add Date -->
+  <div class="modals" *ngIf="checked">
+    <div class="md-form">
+      <i class="fa fa-calendar prefix"></i>
+      <input #dateStart type="date" id="start" placeholder="" (ngModelChange)="send($event)" formControlName="startDate" class="form-control" data-error="You can schedule the event only for one year from today" mdbInputDirective>
+      <label for="start" class="font-weight-light">Date</label>
+    </div>
+  </div>
+</form>
+<div class="modals" *ngIf="!date">
+  <form [formGroup]="startTimeForm">
+    <div class="md-form">
+      <i class="fa fa-calendar prefix"></i>
+      <input id="startT" formControlName="startTime" (ngModelChange)="openStart($event)" class="form-control" placeholder="" type="time" value="{{selectedTimeStart}}" mdbInputDirective>
+      <label for="startT" class="font-weight-light">Start Time</label>
+    </div>
+  </form>
+</div>
+<div class="modals" *ngIf="!date">
+  <form [formGroup]="endTimeForm">
+    <div class="md-form">
+      <i class="fa fa-calendar prefix"></i>
+      <input id="endT" formControlName="endTime" (ngModelChange)="openEnd($event)" class="form-control" placeholder="" type="time" value="{{selectedTimeEnd}}" mdbInputDirective>
+      <label for="endT" class="font-weight-light">End Time</label>
+    </div>
+  </form>
+</div>
+  
+  <!-- Add Date -->
